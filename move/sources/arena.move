@@ -63,6 +63,6 @@ public fun battle(hero: Hero, arena: Arena, ctx: &mut TxContext) {
         // You have to emit this inside of the if else statements
     
     // TODO: Delete the battle place ID
-    id.delete();
+    
 }
 
