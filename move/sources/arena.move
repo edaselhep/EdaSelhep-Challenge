@@ -33,8 +33,18 @@ public fun create_arena(hero: Hero, ctx: &mut TxContext) {
         // Use object::new(ctx) for unique ID
         // Set warrior field to the hero parameter
         // Set owner to ctx.sender()
+    let arena = Arena {
+            id: object::new(ctx),
+            warrior: Hero,
+            seller:ctx.sender(),
+        };
     // TODO: Emit ArenaCreated event with arena ID and timestamp (Don't forget to use ctx.epoch_timestamp_ms(), object::id(&arena))
+    event::emit(ArenaCreated{
+            id: object::id(&arena),
+            timestamp: ctx.epoch_timestamp_ms(),
+        });
     // TODO: Use transfer::share_object() to make it publicly tradeable
+    transfer::share_object(arena);
 }
 
 #[allow(lint(self_transfer))]
