@@ -53,6 +53,7 @@ public fun battle(hero: Hero, arena: Arena, ctx: &mut TxContext) {
     // TODO: Implement battle logic
         // Hints:
         // Destructure arena to get id, warrior, and owner
+    
     // TODO: Compare hero.hero_power() with warrior.hero_power()
         // Hints: 
         // If hero wins: both heroes go to ctx.sender()
@@ -60,6 +61,8 @@ public fun battle(hero: Hero, arena: Arena, ctx: &mut TxContext) {
     // TODO:  Emit ArenaCompleted event with winner/loser IDs (Don't forget to use object::id(&warrior) or object::id(&hero) ). 
         // Hints:  
         // You have to emit this inside of the if else statements
-    // TODO: Delete the battle place ID 
+    
+    // TODO: Delete the battle place ID
+    id.delete();
 }
 
