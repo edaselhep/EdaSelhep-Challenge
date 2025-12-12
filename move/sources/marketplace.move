@@ -95,7 +95,7 @@ public fun buy_hero(list_hero: ListHero, coin: Coin<SUI>, ctx: &mut TxContext) {
             seller,
             timestamp: ctx.epoch_timestamp_ms(),
     // TODO: Delete the listing ID (object::delete(id))
-    object::delete(id);
+    id: object::delete(id);
 }
 
 // ========= ADMIN FUNCTIONS =========
