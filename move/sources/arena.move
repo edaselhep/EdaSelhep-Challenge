@@ -53,6 +53,11 @@ public fun battle(hero: Hero, arena: Arena, ctx: &mut TxContext) {
     // TODO: Implement battle logic
         // Hints:
         // Destructure arena to get id, warrior, and owner
+    public struct Arena has key, store {
+    id: UID,
+    warrior: Hero,
+    owner: address,
+}
     
     // TODO: Compare hero.hero_power() with warrior.hero_power()
         // Hints: 
